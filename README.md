@@ -15,10 +15,9 @@ The objective of our project is to use machine learning to determine whether a g
 
 Data Source:
 
-https://www.kaggle.com/clmentbisaillon/fake-and-real-news-dataset
-  
+https://www.kaggle.com/clmentbisailon/fake-and-real-news-dataset
 
-	
+  
 The process will be as follows:
 
 •	Use Python to import the dataset.
