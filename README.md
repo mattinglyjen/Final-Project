@@ -24,10 +24,10 @@ The process will be as follows:<br>
 •	Perform tokenizing for the model.
 •	Build and train the model.
 •	Assess the performance of the model.
-•	Deploy the app to the web.<br>
+•	Deploy the app to the web.
 
 
-Tools/ libraries:<br>
+Tools/ libraries:
 
 Python/ Pandas
 Python Matplotlib
@@ -39,5 +39,7 @@ Heroku (Web deployment)
 
 
 Companies, governments, and other entities can use this type of process to determine the likelihood of whether a news article that is being spread by social media or other means is fake or is true.
-![image](https://user-images.githubusercontent.com/76014274/123522604-39e4e600-d68c-11eb-9bc7-1a909ee7a7ec.png)
+
+
+![alt text] (https://user-images.githubusercontent.com/76014274/123522604-39e4e600-d68c-11eb-9bc7-1a909ee7a7ec.png)
 
