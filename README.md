@@ -1,13 +1,11 @@
 # Final-Project
-Final Project repo
+
+June 26, 2021
 
 Final Project Proposal: 
 Machine Learning to Find Fake News
 
-Robin Evans, Jennifer Duffy, Jennifer Mattingly
-
-June 26, 2021
-
+Team: Robin Evans, Jennifer Duffy, Jennifer Mattingly
 
 
 The objective of our project is to use machine learning to determine whether a given article is fake or real news. We will create a web-based user interface in which a user can type in some text and the algorithm will predict the percentage probability that it is fake.
@@ -18,7 +16,7 @@ Data Source:
 https://www.kaggle.com/clmentbisailon/fake-and-real-news-dataset
 
   
-The process will be as follows:
+The process will be as follows:<br>
 
 •	Use Python to import the dataset.
 •	Perform exploratory data analysis and visualize the dataset.
@@ -26,10 +24,10 @@ The process will be as follows:
 •	Perform tokenizing for the model.
 •	Build and train the model.
 •	Assess the performance of the model.
-•	Deploy the app to the web.
+•	Deploy the app to the web.<br>
 
 
-Tools/ libraries:
+Tools/ libraries:<br>
 
 Python/ Pandas
 Python Matplotlib
