@@ -41,5 +41,5 @@ Heroku (Web deployment)
 Companies, governments, and other entities can use this type of process to determine the likelihood of whether a news article that is being spread by social media or other means is fake or is true.
 
 
-![alt text] (https://user-images.githubusercontent.com/76014274/123522604-39e4e600-d68c-11eb-9bc7-1a909ee7a7ec.png)
+
 
