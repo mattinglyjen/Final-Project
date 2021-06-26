@@ -28,13 +28,13 @@ The process will be as follows:<br>
 
 
 Tools/ libraries:
-
-Python/ Pandas
-Python Matplotlib
-Scikit-Learn/other machine learning libraries
-SQL (pgAdmin)
-Amazon Web Services (AWS)
-Heroku (Web deployment)
+<br>
+Python/ Pandas<br>
+Python Matplotlib<br>
+Scikit-Learn/other machine learning libraries<br>
+SQL (pgAdmin)<br>
+Amazon Web Services (AWS)<br>
+Heroku (Web deployment)<br>
 	
 
 
