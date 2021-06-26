@@ -18,13 +18,13 @@ https://www.kaggle.com/clmentbisailon/fake-and-real-news-dataset
   
 The process will be as follows:<br>
 
-•	Use Python to import the dataset.
-•	Perform exploratory data analysis and visualize the dataset.
-•	Perform data cleaning such as removing stop words.
-•	Perform tokenizing for the model.
-•	Build and train the model.
-•	Assess the performance of the model.
-•	Deploy the app to the web.
+•	Use Python to import the dataset.<br>
+•	Perform exploratory data analysis and visualize the dataset.<br>
+•	Perform data cleaning such as removing stop words.<br>
+•	Perform tokenizing for the model.<br>
+•	Build and train the model.<br>
+•	Assess the performance of the model.<br>
+•	Deploy the app to the web.<br>
 
 
 Tools/ libraries:
