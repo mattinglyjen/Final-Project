@@ -4,22 +4,25 @@
 from flask import Flask, render_template, url_for, request
 import pandas as pd
 import pickle
+import joblib
+import nltk
+from joblib import load, dump
 from sklearn import preprocessing
 from sklearn import metrics
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 # load dataset into dataframe object 
-df_true = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/True.csv")
-df_fake = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/Fake.csv")
+#df_true = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/True.csv")
+#df_fake = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/Fake.csv")
     
-df_true['target'] = "true"  
-df_fake['target'] = "fake"
-df = pd.concat([df_true, df_fake]).reset_index(drop = True)
+#df_true['target'] = "true"  
+#df_fake['target'] = "fake"
+#df = pd.concat([df_true, df_fake]).reset_index(drop = True)
 
 # initialize new Flask instance with argument __name__ 
 app = Flask(__name__)
 model = pickle.load(open('trained_regression_model.pkl', 'rb'))
-#model.fit(X, y)
 
 # ROUTES
 @app.route('/')
@@ -33,15 +36,16 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-       
-    # the code below is taking HTML code and bringing it into this python file
+    
     if request.method == 'POST':
         par_text = request.form['news_paragraph']
-        news_prediction = model.predict(par_text)
-    # code below takes info from .py file and returns to HTML file
-    return render_template('result.html', prediction = news_prediction)
-predict()
-
+        stop_words = stopwords.words('english')
+        stop_words.extend(['from', 'subject', 're', 'edu', 'use'])
+        input_test2 = [par_text]
+        input_output = [word for word in input_test2 if not word in stop_words]
+        news_prediction = model.predict(input_output)   
+ 
+        return render_template('home.html', prediction = news_prediction)
     
 # the if __name == '__main__' statement ensure that the run function will only run the application 
 # on the server when the script is directly executed by Python interpreter
