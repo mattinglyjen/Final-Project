@@ -1,16 +1,27 @@
-from Flask import Flask, render_template, url_for, request
+# this file takes input from the html file, uses the input to run the serialized model (Pickled model), and then 
+# outputs the target information
+
+from flask import Flask, render_template, url_for, request
 import pandas as pd
 import pickle
-from sklearn.feature_extraction.text import CountVectorizer
-#from sklearn.naive_bayes import MultinomialNB
-from sklearn.externals import joblib
+from sklearn import preprocessing
+from sklearn import metrics
+from nltk.corpus import stopwords
 
-# initialize new Flask instance with argument __name__ (so Flask knows HTML template folder
-# is in same directory as Flask is located)
+# load dataset into dataframe object 
+df_true = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/True.csv")
+df_fake = pd.read_csv("https://final-project-data-rjj.s3.us-east-2.amazonaws.com/Fake.csv")
+    
+df_true['target'] = "true"  
+df_fake['target'] = "fake"
+df = pd.concat([df_true, df_fake]).reset_index(drop = True)
+
+# initialize new Flask instance with argument __name__ 
 app = Flask(__name__)
+model = pickle.load(open('trained_regression_model.pkl', 'rb'))
+#model.fit(X, y)
 
-# specify url that triggers execution of the function "home"; the "home" function renders 
-# the home.html file (located in "templates" folder)
+# ROUTES
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -22,26 +33,16 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    df=pd.read_csv("True.csv", encoding="latin-1")
-    #Features and labels
-    df['label'] = df['class'].map({'True' : 0, 'False' : 1})
-    x = df['message']
-    y = df['label']
-
-    #Extract feature with CountVectorizer
-    cv = CountVectorizer()
-    x = cv.fit_transform(x)     #Fitting the data
-    from sklearn.model_selection import train_test_split
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.10, random_state = 42)
-
-    ## need to check on whether need to add clf. fit etc code
+       
+    # the code below is taking HTML code and bringing it into this python file
     if request.method == 'POST':
-        message = request.form['message']
-        data = [message]
-        vect = cv.transform(data).toarray()
-        prediction = clf.predict(vect)
-    return render_template('result.html', prediction = prediction)
+        par_text = request.form['news_paragraph']
+        news_prediction = model.predict(par_text)
+    # code below takes info from .py file and returns to HTML file
+    return render_template('result.html', prediction = news_prediction)
+predict()
 
+    
 # the if __name == '__main__' statement ensure that the run function will only run the application 
 # on the server when the script is directly executed by Python interpreter
 if __name__ == '__main__':
