@@ -1,6 +1,27 @@
+![](Images/)
+
+Final Project Summary:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![](Images/BreakingNews.jpg)
+
+
 # Final-Project
 
-June 26, 2021
+June 26, 2021<br>
+![](Images/Detecting.jpg)
 
 Final Project Proposal: 
 Machine Learning to Find Fake News
@@ -13,7 +34,10 @@ The objective of our project is to use machine learning to determine whether a g
 
 Data Source:
 
-https://www.kaggle.com/clmentbisailon/fake-and-real-news-dataset
+https://www.kaggle.com/clmentbisailon/fake-and-real-news-dataset<br>
+
+
+![](Images/FakeNewBots.jpg)
 
   
 The process will be as follows:<br>
