@@ -20,7 +20,7 @@ Final Project Summary:
 
 # Final-Project
 
-June 26, 2021<br>
+July 2021<br>
 ![](Images/Detecting.jpg)
 
 Final Project Proposal: 
@@ -29,7 +29,7 @@ Machine Learning to Find Fake News
 Team: Robin Evans, Jennifer Duffy, Jennifer Mattingly
 
 
-The objective of our project is to use machine learning to determine whether a given article is fake or real news. We will create a web-based user interface in which a user can type in some text and the algorithm will predict the percentage probability that it is fake.
+The objective of our project is to use machine learning to determine whether a given article is fake or real news. We will create a web-based user interface in which a user can type in some text and the algorithm will predict whether the news is fake or real.
 
 
 Data Source:
